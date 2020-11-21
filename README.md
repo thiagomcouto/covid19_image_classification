@@ -1,4 +1,4 @@
-# Utilizando image classification e Augmented AI em imagens de raio-x para detecção de COVID-19 – Part 1
+# Utilizando image classification em imagens de raio-x para detecção de COVID-19
 
 <p>A pandemia causada pelo Covid-19 atingiu todos os setores e com ela trouxe novos desafios, especialmente na área da saúde. Cientistas ao redor do mundo buscam novos tratamentos, formas de prevenção e detecção da doença. Nessa busca por novos métodos um requisito crucial é a escala, dadas as proporções da pandemia, se faz necessário que os resultados sejam escaláveis para alcançar uma grande parte da população.</p>
 
@@ -4364,10 +4364,6 @@ outputs = list_objects(s3_client, bucket, batch_job_name + "/output")
 ### Resultado e Próximos Passos
 
 Devido ao caráter randômico da separação dos dados os resultados obtidos podem variar, nos meus testes realizados o modelo classificou todos os pacientes corretamente dentre as imagens de teste. Caso desejamos buscar melhores resultados podemos utilizar a feature do sagemaker de automatic model tunning, mais informações nesse link: https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html
-
-Para o cenário apresentado, podem haver casos em que tenhamos uma probabilidade de classificação baixa, tornando necessário uma validação de um médico especialista. 
-
-A validação humana é um caso comum para workloads de machine learning em que o modelo tenha uma resposta com probabilidade abaixo de um determinado threshold. Para solucionar esse problema a AWS dispõe do serviço Augmented IA, que será o assunto da parte 2 desse blogpost.
 
 
 ```python
